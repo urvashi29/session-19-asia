@@ -1,0 +1,31 @@
+.container {}
+
+.image-card {
+    display: block;
+}
+
+
+@media screen and (max-width: 400px) {
+    .container {}
+
+    .image-card {
+        display: none;
+    }
+}
+
+/* 600px and above */
+@media screen and (min-width: 600px) {
+    .container {}
+
+    .image-card {}
+}
+
+/* 768px and above */
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 900px) {}
+
+/* 992px and above */
+@media screen and (min-width: 992px) {}
+
+@media screen and (min-width: 1200px) {}
