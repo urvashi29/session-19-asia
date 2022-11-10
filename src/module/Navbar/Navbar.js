@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import image from '../../images/React_logo.png';
 
-const pages = ['Home', 'About', 'Recipe'];
+const pages = ['Home', 'About', 'Recipe', 'Users'];
 
 function Navbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);

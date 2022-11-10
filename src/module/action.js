@@ -1,6 +1,6 @@
 import * as actions from './actionType';
 import axios from 'axios';
-import { postApi } from '../utils/constants';
+import { postApi, getUsersApi } from '../utils/constants';
 
 export const onAddData = (item) => {
     // return  {
@@ -67,33 +67,49 @@ export const onPostRequest = (user) => {
 
 
 // const fun = () => (dispatch) => {
-    // services = data.services
+// services = data.services
 
-    // dispatch(
-    //     return {
-    //         type:'', 
-    //         payload: services
-    //     }
-    // })
+// dispatch(
+//     return {
+//         type:'', 
+//         payload: services
+//     }
+// })
 
 // }
 
 
 
 // const fun = () => (dispatch) => {
- 
-    // axios.get(url).then(res => {
-    //     dispatch(
-    //         (data => {
-    //             return {
-    //                 type: '',
-    //                 payload: {
 
-    //                 }
-    //             }
-    //         })(res.data)
-    //     )
-    // }).catch();
+// axios.get(url).then(res => {
+//     dispatch(
+//         (data => {
+//             return {
+//                 type: '',
+//                 payload: {
+
+//                 }
+//             }
+//         })(res.data)
+//     )
+// }).catch();
 
 // }
 
+
+
+export const getUsers = () => (dispatch) => {
+    axios.get(getUsersApi).then(res => {
+        dispatch(
+            ((data) => {
+                return {
+                    type: actions.GET_USERS,
+                    payload: {
+                        response: data
+                    }
+                }
+            })(res.data)
+        )
+    }).catch(err => console.log(err));
+}

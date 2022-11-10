@@ -34,7 +34,8 @@ const initState = {
             sales: 4000,
         },
     ],
-    postUsers: []
+    postUsers: [],
+    users: []
 }
 
 const reducer = (state = initState, action) => {
@@ -50,6 +51,12 @@ const reducer = (state = initState, action) => {
         case actions.POST_USERS:
             // console.log(JSON.parse(action.payload.response));
             return { ...state, postUsers: [...state.postUsers, action.payload.response] }
+        case actions.GET_USERS:
+            console.log(action);
+            return {
+                ...state, 
+                users: action.payload.response
+            }
         default:
             return state;
     }
